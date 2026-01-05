@@ -3,6 +3,7 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+    padding-bottom: 60px; /* Space for fixed footer */
 }
 
 header, footer {
@@ -88,5 +89,145 @@ main {
       border-radius: 6px;
     }
 
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Reduce main padding on mobile */
+    main {
+        padding: 1rem;
+    }
+
+    /* Stack location info vertically */
+    .position-absolute.top-0.end-0 {
+        position: relative !important;
+        text-align: center;
+        padding: 0.5rem !important;
+        font-size: 0.85rem;
+    }
+
+    /* Make profile header responsive */
+    header.position-relative {
+        text-align: center;
+    }
+
+    /* Adjust profile picture size */
+    .profile-pic {
+        width: 120px !important;
+        height: 120px !important;
+        margin: 0 auto 1rem;
+    }
+
+    /* Stack social icons and resume button */
+    .social-icons {
+        position: relative !important;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .resume-btn-inside {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        display: inline-block;
+        margin: 1rem auto;
+    }
+
+    /* Adjust header text */
+    .header__base-info h4 {
+        font-size: 1.2rem !important;
+        text-align: center;
+    }
+
+    .status {
+        font-size: 0.85rem;
+        text-align: center;
+    }
+
+    /* Make sidebar stack on mobile */
+    .sidebar {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Adjust content containers */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Make badges wrap properly */
+    .badge {
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    /* Adjust card spacing */
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    /* Make content sections more compact */
+    div[style*="margin-top: 100px"],
+    div[style*="margin-top: 50px"] {
+        margin-top: 2rem !important;
+    }
+
+    /* Adjust alert boxes */
+    .alert {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    /* Make buttons full width on mobile */
+    .btn {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .btn-sm {
+        width: auto;
+    }
+
+    /* Adjust heading sizes */
+    h1 {
+        font-size: 1.5rem !important;
+    }
+
+    h4 {
+        font-size: 1.1rem !important;
+    }
+
+    h5 {
+        font-size: 1rem !important;
+    }
+
+    /* Footer adjustments */
+    footer {
+        font-size: 0.85rem;
+    }
+
+    /* Fix two-column layout to stack on mobile */
+    .row.mb-4 .col-md-6 {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 576px) {
+    .profile-pic {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .social-icons i {
+        font-size: 1.2rem !important;
+    }
+
+    h1 {
+        font-size: 1.3rem !important;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+    }
+}
 
 
