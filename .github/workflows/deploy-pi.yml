@@ -24,7 +24,7 @@ jobs:
           max_attempts=60
           attempt=0
           while [ $attempt -lt $max_attempts ]; do
-            if docker pull ghcr.io/fablihamaliha/Portfolio:latest 2>/dev/null; then
+            if docker pull ghcr.io/fablihamaliha/portfolio:latest 2>/dev/null; then
               echo "✅ Docker image is ready!"
               break
             fi
@@ -48,10 +48,10 @@ jobs:
           docker run -d \
             --name Portfolio \
             --restart unless-stopped \
-            --network host \           
+            --network host \
             -e FLASK_ENV="production" \
             -e FLASK_DEBUG="false" \
-            ghcr.io/fablihamaliha/Portfolio:latest
+            ghcr.io/fablihamaliha/portfolio:latest
 
       - name: Wait for application to start
         run: |
