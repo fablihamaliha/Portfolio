@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container text-center" style="margin-top: 100px;">
-  <h1>Hello, I'm Fabliha 👋</h1>
-  <p>This is in construction </p>
-  <p> I recently received CKAD certification https://www.credly.com/badges/e1a7f7d5-7fe4-4dce-b3aa-3d6f9c94ceed/public_url </p>
+<div class="container" style="margin-top: 100px;">
+  <h1 class="text-center mb-4">Certifications</h1>
+
+  <div class="alert alert-info text-center" role="alert">
+    <i class="fas fa-hammer"></i> This page is currently under construction. More certifications will be added soon!
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 col-lg-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body text-center">
+          <h5 class="card-title">Certified Kubernetes Application Developer (CKAD)</h5>
+          <p class="card-text text-muted">The Linux Foundation</p>
+          <a href="https://www.credly.com/badges/e1a7f7d5-7fe4-4dce-b3aa-3d6f9c94ceed/public_url"
+             target="_blank"
+             class="btn btn-primary">
+            View Certificate
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

@@ -1,10 +1,44 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container text-center" style="margin-top: 100px;">
-  <h1>Hello, I'm Fabliha 👋</h1>
-  <p>This is in construction </p>
-  <p> for now I am working on the portfolio and also in this app that I am 
-     designing link :https://tyisha-unoppressed-luvenia.ngrok-free.dev/ <p>
+<div class="container" style="margin-top: 100px;">
+  <h1 class="text-center mb-4">Portfolio</h1>
+
+  <div class="alert alert-info text-center" role="alert">
+    <i class="fas fa-hammer"></i> This page is currently under construction. My project showcase will be added soon!
+  </div>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+      <h5 class="mb-3">Current Projects</h5>
+
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-title">Portfolio Website</h6>
+          <p class="card-text text-muted">
+            This Flask-based portfolio site with CI/CD automation, Docker containerization, and deployment to Raspberry Pi.
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+          <h6 class="card-title">PRA Application</h6>
+          <p class="card-text text-muted">
+            Currently working on a web application hosted on Raspberry Pi.
+          </p>
+          <a href="https://tyisha-unoppressed-luvenia.ngrok-free.dev/"
+             target="_blank"
+             class="btn btn-sm btn-primary">
+            View Live Demo
+          </a>
+        </div>
+      </div>
+
+      <p class="text-center text-muted mt-4">
+        More projects and detailed case studies coming soon!
+      </p>
+    </div>
+  </div>
 </div>
 {% endblock %}
