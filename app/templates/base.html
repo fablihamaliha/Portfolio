@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Fabliha Maliha | DevOps Portfolio{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Bootstrap CSS -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoYz1HIzK3U6gOCp+7ZTlF+vcptI+2bXrYkU6IH7CjXjQ6E"
+            crossorigin="anonymous"
+    />
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href=
+            "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href=
+            "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
+</head>
+<body>
+<div class="position-absolute top-0 end-0 p-3 text-muted d-flex align-items-center">
+        <span>📍 San Francisco Bay Area</span>
+
+
+
+</div>
+
+<main class="main">
+
+
+
+    <div class="container py-4">
+
+        <!-- Profile Header Allows position: absolute children to be anchored to it-->
+        <header class="position-relative mb-4">
+            <div class="social-icons mt-3">
+                <!-- GitHub -->
+                <a href="https://github.com/fablihamaliha" target="_blank" class="text-dark mx-2">
+                    <i class="bi bi-github" style="font-size: 1.5rem;"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/fabliha" target="_blank" class="text-dark mx-2">
+                    <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+                </a>
+
+                <!-- Gmail (envelope) -->
+                <a href="mailto:fablihamaliha123@gmail.com" class="text-dark mx-2">
+                    <i class="bi bi-envelope-fill" style="font-size: 1.5rem;"></i>
+                </a>
+            </div>
+
+            <a href="{{ url_for('static', filename='resume/resume_fabliha.pdf') }}"
+               target="_blank"
+               class="resume-btn-inside">
+                📄 Download Resume
+
+            </a>
+
+
+            <img
+                    src="{{ url_for('static', filename='images/Image.png') }}"
+                    alt="Fabliha Maliha"
+                    class="profile-pic"
+            />
+            <div class="header__base-info">
+
+
+                <h4>Fabliha <span class="font-weight-normal">Maliha</span></h4>
+                <div class="status">DevOps with a Python Soul 🐍 | Think. Automate. Solve. | Fueled by ☕ & 📚
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 mb-4">
+                <div class="sidebar p-3">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="{{ url_for('main.base') }}" class="nav-link active">About Me</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="{{ url_for('main.journey') }}" class="nav-link">My Journey</a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="{{ url_for('main.portfolio') }}" class="nav-link">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url_for('main.certifications') }}" class="nav-link">Certifications</a>
+                        </li>
+                         <li class="nav-item">
+                            <a href="{{ url_for('main.contact') }}" class="nav-link">Contact Me</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+
+                <div>
+                    {% block content %}
+                    <div class="container text-center" style="margin-top: 100px;">
+
+                        <h1>Hi, I'm Fab  (short for Fabliha)</h1>
+
+                        <p>
+                            I'm a Senior Consultant with hands-on experience in cloud infrastructure, CI/CD automation,
+                            and Kubernetes-based deployments. This site is a personal project built using Flask (Python)
+                            with Blueprints, hosted on Render, and integrated with a CI/CD pipeline using Docker and
+                            Kubernetes.
+                            <br><br>
+                            I’ve contributed to large-scale banking projects, working with tools like Ansible, Helm,
+                            Vault, GitHub Actions, and Dynatrace, and I’m constantly refining this portfolio to showcase
+                            my technical skills and personal growth. Currently, I’m preparing for the CKAD and AZ-400
+                            certifications while building a set of web apps to highlight my capabilities in both
+                            development and DevOps.
+                            <br><br>
+                            This is just the first version of my portfolio — it will evolve as I learn, build, and ship
+                            more.
+                        </p>
+
+                    </div>
+                    <!-- Page-specific content goes here -->
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="fixed-bottom bg-dark text-center py-2">
+    <div>
+        © 2025 Fabliha
+    </div>
+</footer>
+
+</body>
+</html>

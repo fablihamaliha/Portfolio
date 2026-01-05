@@ -1,0 +1,72 @@
+name: Deploy to Raspberry Pi
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual triggers
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Wait for Docker image to be available
+        run: |
+          echo "Waiting for CI to build and push Docker image..."
+          max_attempts=60
+          attempt=0
+          while [ $attempt -lt $max_attempts ]; do
+            if docker pull ghcr.io/fablihamaliha/Portfolio:latest 2>/dev/null; then
+              echo "✅ Docker image is ready!"
+              break
+            fi
+            echo "Attempt $((attempt+1))/$max_attempts: Image not ready yet, waiting 10s..."
+            sleep 10
+            attempt=$((attempt+1))
+          done
+          if [ $attempt -eq $max_attempts ]; then
+            echo "❌ Timeout waiting for Docker image"
+            exit 1
+          fi
+
+      - name: Stop existing container
+        run: |
+          docker stop Portfolio || true
+          docker rm Portfolio || true
+        continue-on-error: true
+
+      - name: Start new container
+        run: |
+          docker run -d \
+            --name Portfolio \
+            --restart unless-stopped \
+            --network host \           
+            -e FLASK_ENV="production" \
+            -e FLASK_DEBUG="false" \
+            ghcr.io/fablihamaliha/Portfolio:latest
+
+      - name: Wait for application to start
+        run: |
+          echo "Waiting for application to start..."
+          sleep 10
+
+      - name: Check application health
+        run: |
+          curl -f http://localhost:5000/ || exit 1
+
+      - name: Show logs
+        if: always()
+        run: |
+          docker logs Portfolio --tail 50
+
+      - name: Cleanup old images
+        run: |
+          docker image prune -af --filter "until=24h"
