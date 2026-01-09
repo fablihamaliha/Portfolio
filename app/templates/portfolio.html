@@ -1,44 +1,45 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container" style="margin-top: 100px;">
-  <h1 class="text-center mb-4">Portfolio</h1>
-
-  <div class="alert alert-info text-center" role="alert">
-    <i class="fas fa-hammer"></i> This page is currently under construction. My project showcase will be added soon!
+<section class="page-section">
+  <div class="page-hero text-center">
+    <span class="eyebrow">Portfolio</span>
+    <h1>Projects That Show Impact</h1>
+    <p class="lead">Selected work that highlights DevOps automation, infrastructure, and delivery.</p>
   </div>
 
-  <div class="row justify-content-center mt-5">
-    <div class="col-md-8">
-      <h5 class="mb-3">Current Projects</h5>
+  <div class="soft-callout">
+    <i class="bi bi-tools"></i>
+    <span>More case studies are on the way. Here are a few active highlights.</span>
+  </div>
 
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h6 class="card-title">Portfolio Website</h6>
-          <p class="card-text text-muted">
-            This Flask-based portfolio site with CI/CD automation, Docker containerization, and deployment to Raspberry Pi.
-          </p>
-        </div>
+  <div class="project-grid">
+    <div class="project-card" style="--delay: 0.05s;">
+      <div class="project-header">
+        <h5>Portfolio Website</h5>
+        <span class="project-tag">DevOps + Web</span>
       </div>
-
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h6 class="card-title">PRA Application</h6>
-          <p class="card-text text-muted">
-            Currently working on a web application hosted on Raspberry Pi.
-          </p>
-          <a href="https://tyisha-unoppressed-luvenia.ngrok-free.dev/"
-             target="_blank"
-             class="btn btn-sm btn-primary">
-            View Live Demo
-          </a>
-        </div>
-      </div>
-
-      <p class="text-center text-muted mt-4">
-        More projects and detailed case studies coming soon!
+      <p>
+        Flask-based portfolio with CI/CD automation, Docker containerization, and deployment to a Raspberry Pi.
       </p>
     </div>
+
+    <div class="project-card" style="--delay: 0.1s;">
+      <div class="project-header">
+        <h5>PRA Application</h5>
+        <span class="project-tag">In Progress</span>
+      </div>
+      <p>Currently building a production-ready web application hosted on Raspberry Pi.</p>
+      <a href="https://skincares.work/"
+         target="_blank"
+         class="btn btn-sm btn-primary">
+        View Live Demo
+      </a>
+    </div>
   </div>
-</div>
+
+  <p class="text-center text-muted mt-4">
+    Detailed case studies and architecture write-ups coming soon.
+  </p>
+</section>
 {% endblock %}

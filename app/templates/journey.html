@@ -1,19 +1,96 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container" style="margin-top: 100px;">
-  <h1 class="text-center mb-4">My Journey</h1>
-
-  <div class="alert alert-info text-center" role="alert">
-    <i class="fas fa-hammer"></i> This page is currently under construction. My professional journey timeline will be added soon!
-  </div>
-
-  <div class="row justify-content-center mt-5">
-    <div class="col-md-8">
-      <p class="text-center text-muted">
-        Check back soon to see my educational background, work experience, and career milestones.
+<section class="page-section">
+  <div class="journey-section">
+    <div class="journey-hero text-center">
+      <span class="journey-eyebrow">Career Snapshot</span>
+      <h1 class="journey-title">My Journey</h1>
+      <p class="journey-subtitle">
+        A concise, recruiter-friendly view of my growth in DevOps and infrastructure.
       </p>
     </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="journey-card">
+          <ul class="journey-list">
+            <li style="--i: 1;">
+              <div class="journey-icon">
+                <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5>Education</h5>
+                <p>Ryerson graduate with a strong foundation in software and infrastructure.</p>
+              </div>
+            </li>
+            <li style="--i: 2;">
+              <div class="journey-icon">
+                <i class="bi bi-building-check" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5>Early Career</h5>
+                <p>Joined CGI on a bank infrastructure team and grew into a senior developer role.</p>
+              </div>
+            </li>
+            <li style="--i: 3;">
+              <div class="journey-icon">
+                <i class="bi bi-diagram-3-fill" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5>Modernization</h5>
+                <p>Helped move a core financial application from data center VMs to Kubernetes on Red Hat.</p>
+              </div>
+            </li>
+            <li style="--i: 4;">
+              <div class="journey-icon">
+                <i class="bi bi-gear-wide-connected" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5>Automation</h5>
+                <p>Built automation tools that improved reliability, speed, and developer experience.</p>
+              </div>
+            </li>
+            <li style="--i: 5;">
+              <div class="journey-icon">
+                <i class="bi bi-people-fill" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5>Leadership</h5>
+                <p>Supported functional QA in a leadership capacity and presented outcomes to senior stakeholders.</p>
+              </div>
+            </li>
+            <li style="--i: 6;">
+              <div class="journey-icon">
+                <i class="bi bi-compass-fill" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5>Direction</h5>
+                <p>Took ownership of team direction and helped shape ways of working.</p>
+              </div>
+            </li>
+            <li style="--i: 7;">
+              <div class="journey-icon">
+                <i class="bi bi-globe-americas" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5>Today</h5>
+                <p>Relocated to the US with a green card and now focused on DevOps and infrastructure roles.</p>
+              </div>
+            </li>
+            <li style="--i: 8;">
+              <div class="journey-icon">
+                <i class="bi bi-award-fill" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h5>Credentials</h5>
+                <p>Earned CKAD and currently building projects while preparing for AWS Associate.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 {% endblock %}

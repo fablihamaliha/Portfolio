@@ -9,3 +9,6 @@ def create_app():
 
 # Optional but helpful for wsgi.py
 app = create_app()
+
+if __name__ == "__main__":
+    app.run(debug=True)
