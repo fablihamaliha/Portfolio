@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Production Monitoring - Fabliha Maliha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/monitoring.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@3.0.0/index.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="monitoring-header">
+            <h1>🔴 Live Production Monitoring</h1>
+            <p class="subtitle">Real-time metrics from production applications</p>
+            <div class="status-indicator">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Connecting...</span>
+            </div>
+        </header>
+
+        <!-- Quick Stats Cards -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <h3>Request Rate</h3>
+                    <p class="stat-value" id="totalRequestRate">--</p>
+                    <span class="stat-unit">req/sec</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-content">
+                    <h3>Avg Response Time</h3>
+                    <p class="stat-value" id="avgResponseTime">--</p>
+                    <span class="stat-unit">ms (p95)</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-content">
+                    <h3>Success Rate</h3>
+                    <p class="stat-value" id="successRate">--</p>
+                    <span class="stat-unit">%</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🌍</div>
+                <div class="stat-content">
+                    <h3>Total Requests</h3>
+                    <p class="stat-value" id="totalRequests24h">--</p>
+                    <span class="stat-unit">last 24h</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Status -->
+        <section class="app-status-section">
+            <h2>Application Status</h2>
+            <div class="app-status-grid" id="appStatusGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Charts -->
+        <section class="charts-section">
+            <div class="chart-container">
+                <h2>Request Rate (Last 6 Hours)</h2>
+                <canvas id="requestRateChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Response Time p95 (Last 6 Hours)</h2>
+                <canvas id="responseTimeChart"></canvas>
+            </div>
+        </section>
+
+        <!-- System Metrics -->
+        <section class="system-metrics-section">
+            <h2>System Resources</h2>
+            <div class="system-grid">
+                <div class="system-card">
+                    <h3>CPU Usage</h3>
+                    <div class="progress-circle" id="cpuCircle">
+                        <span class="progress-value" id="cpuValue">--</span>
+                    </div>
+                </div>
+
+                <div class="system-card">
+                    <h3>Memory Usage</h3>
+                    <div class="progress-circle" id="memoryCircle">
+                        <span class="progress-value" id="memoryValue">--</span>
+                    </div>
+                </div>
+
+                <div class="system-card">
+                    <h3>Disk Usage</h3>
+                    <div class="progress-circle" id="diskCircle">
+                        <span class="progress-value" id="diskValue">--</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Geographic Distribution -->
+        <section class="geo-section">
+            <h2>Traffic by Country (Last 24h)</h2>
+            <div class="geo-chart-container">
+                <canvas id="geoChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Tech Stack Info -->
+        <section class="tech-stack-section">
+            <h2>🛠️ Monitoring Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <strong>Metrics Collection:</strong> Prometheus
+                </div>
+                <div class="tech-item">
+                    <strong>Instrumentation:</strong> Python prometheus_client
+                </div>
+                <div class="tech-item">
+                    <strong>Infrastructure:</strong> Raspberry Pi 4 (Self-hosted)
+                </div>
+                <div class="tech-item">
+                    <strong>Visualization:</strong> Chart.js + Custom API
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="monitoring-footer">
+            <p>Auto-refreshes every 30 seconds | Last updated: <span id="lastUpdate">--</span></p>
+            <a href="/" class="back-link">← Back to Portfolio</a>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/monitoring.js') }}"></script>
+</body>
+</html>

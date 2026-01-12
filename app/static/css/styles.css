@@ -369,6 +369,38 @@ main {
     font-size: 1.4rem;
 }
 
+.cert-status {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(47, 109, 114, 0.12);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.in-progress-badge {
+    background: rgba(237, 137, 54, 0.12);
+    color: #ed8936;
+}
+
+.cert-card.in-progress {
+    border: 2px solid rgba(237, 137, 54, 0.3);
+    background: linear-gradient(135deg, rgba(237, 137, 54, 0.02) 0%, rgba(237, 137, 54, 0.05) 100%);
+}
+
+.cert-note {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    font-style: italic;
+}
+
+.cert-note i {
+    color: #ed8936;
+}
+
 .contact-card {
     display: grid;
     gap: 1.2rem;
@@ -659,5 +691,62 @@ main {
 
     .page-hero h1 {
         font-size: 1.7rem !important;
+    }
+}
+
+/* Monitoring Project Card Styling */
+.monitoring-card {
+    border: 2px solid #667eea !important;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.monitoring-card:hover {
+    border-color: #764ba2 !important;
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2) !important;
+}
+
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tech-badge {
+    padding: 0.25rem 0.75rem;
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.monitoring-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border: none !important;
+    color: white !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin-top: 1rem !important;
+    width: fit-content !important;
+}
+
+.monitoring-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.monitoring-btn i {
+    animation: pulse-icon 2s ease-in-out infinite;
+}
+
+@keyframes pulse-icon {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
     }
 }

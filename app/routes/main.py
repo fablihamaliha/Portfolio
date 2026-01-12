@@ -44,3 +44,9 @@ def contact():
     print("🔁 / contac route called")
 
     return render_template('contact.html')
+
+@main_bp.route('/monitoring')
+def monitoring():
+    print("🔁 / monitoring route called")
+
+    return render_template('monitoring.html')

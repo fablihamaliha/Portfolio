@@ -1,0 +1,37 @@
+Summary of changes by Codex
+
+- Updated run script to enable debug auto-reload when running directly.
+  File: run.py
+
+- Added new site layout structure with header, nav, and single-column content.
+  File: app/templates/base.html
+  - Replaced sidebar layout with top header + horizontal nav.
+  - Added brand block with name, role, location, and actions (social + resume).
+  - Kept main content sections in the base About page.
+
+- Redesigned Journey page content and layout to a clean sectioned list with icons.
+  File: app/templates/journey.html
+
+- Redesigned Portfolio page with a hero, callout, and project cards.
+  File: app/templates/portfolio.html
+
+- Redesigned Certifications page with a hero, callout, and certification card.
+  File: app/templates/certifications.html
+
+- Redesigned Contact page into a contact card with email/LinkedIn/GitHub.
+  File: app/templates/contact.html
+
+- Overhauled site styling into a DevOps/SRE-friendly design system.
+  File: app/static/css/styles.css
+  - New color palette, gradients, shadows, typography, and layout primitives.
+  - New header/nav styling, cards, badges, and list styles.
+  - Updated buttons and project tags to match the new palette.
+
+- Added typography imports for Fraunces + Manrope.
+  File: app/templates/base.html
+
+- Improved mobile responsiveness across header, nav, cards, and content.
+  File: app/static/css/styles.css
+
+Note: The live deployment on Raspberry Pi may need cache purge or service restart
+for changes to appear.

@@ -36,10 +36,46 @@
         View Live Demo
       </a>
     </div>
-  </div>
 
-  <p class="text-center text-muted mt-4">
-    Detailed case studies and architecture write-ups coming soon.
-  </p>
+    <div class="project-card monitoring-card" style="--delay: 0.15s;">
+      <div class="project-header">
+        <h5><i class="bi bi-activity"></i> Production Observability Stack</h5>
+        <span class="project-tag" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">Live</span>
+      </div>
+      <p>
+        Full-stack observability infrastructure deployed on self-hosted Raspberry Pi.
+        Custom monitoring dashboard with Flask API querying Prometheus for metrics collection.
+        Grafana for advanced visualization, Loki for log aggregation, and Promtail for log shipping.
+        Real-time tracking of request rates, p95 latency, error rates, and system resources across production apps.
+      </p>
+      <div class="project-tech-stack">
+        <span class="tech-badge">Prometheus</span>
+        <span class="tech-badge">Grafana</span>
+        <span class="tech-badge">Loki</span>
+        <span class="tech-badge">Promtail</span>
+        <span class="tech-badge">Flask API</span>
+        <span class="tech-badge">Chart.js</span>
+        <span class="tech-badge">PromQL</span>
+        <span class="tech-badge">Node Exporter</span>
+      </div>
+      <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(102, 126, 234, 0.2);">
+        <p style="font-size: 0.85rem; color: #667eea; margin: 0 0 0.5rem 0;">
+          <strong>Key Features:</strong>
+        </p>
+        <ul style="font-size: 0.85rem; margin: 0; padding-left: 1.5rem; color: var(--muted);">
+          <li>Metrics collection from 2 production apps with Prometheus</li>
+          <li>Custom API endpoints with PromQL queries</li>
+          <li>Grafana dashboards for advanced analytics</li>
+          <li>Centralized log aggregation with Loki</li>
+          <li>Real-time visualization with auto-refresh</li>
+          <li>Zero cost - fully self-hosted infrastructure</li>
+        </ul>
+      </div>
+      <a href="{{ url_for('main.monitoring') }}"
+         class="btn btn-sm btn-primary monitoring-btn">
+        <i class="bi bi-graph-up"></i> View Live Dashboard
+      </a>
+    </div>
+  </div>
 </section>
 {% endblock %}
