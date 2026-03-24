@@ -14,7 +14,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-COPY run.py .    
+COPY run.py .
+COPY telemetry_middleware.py .
 
 COPY app/ ./app/
 
