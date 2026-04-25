@@ -1,11 +1,18 @@
 {% extends "base.html" %}
-{% block title %}CKAD Journey | Blog{% endblock %}
+{% block title %}How I Passed the CKAD Exam: Study Plan, Resources & Honest Tips | Fabliha Maliha{% endblock %}
+{% block seo %}
+<meta name="description" content="A practical guide on how to pass the CKAD (Certified Kubernetes Application Developer) exam — study plan, best resources, mock exams, Killer Shell tips, and free PDF downloads.">
+<meta name="keywords" content="CKAD, Kubernetes, CKAD exam, CKAD study guide, CKAD tips, KodeKloud, Killer Shell, Kubernetes certification, DevOps certification, CKAD resources">
+<meta property="og:title" content="How I Passed the CKAD Exam: Study Plan, Resources & Honest Tips">
+<meta property="og:description" content="Practical breakdown of what worked for the CKAD exam — free study PDFs included.">
+<meta property="og:type" content="article">
+{% endblock %}
 {% block content %}
 <section class="page-section">
     <div class="page-hero">
         <span class="eyebrow">Blog</span>
-        <h1>How I Prepared for the CKAD Exam</h1>
-        <p class="lead">What actually helped — a practical breakdown for anyone preparing for the Certified Kubernetes Application Developer exam.</p>
+        <h1>How I Passed the CKAD Exam: Study Plan, Resources &amp; Honest Tips</h1>
+        <p class="lead">A practical breakdown of what actually worked — for anyone preparing for the Certified Kubernetes Application Developer exam.</p>
     </div>
 
     <div class="blog-meta">
@@ -16,7 +23,7 @@
 
     <div class="blog-body">
 
-        <p>When preparing for the <strong>CKAD (Certified Kubernetes Application Developer)</strong> exam, the challenge is not just learning concepts — it is learning how to solve tasks quickly under exam pressure. This post is a breakdown of what helped the most.</p>
+        <p>When preparing for the <strong>CKAD (Certified Kubernetes Application Developer)</strong> exam, the challenge is not just learning concepts, it is learning how to solve tasks quickly under exam pressure. This post is a breakdown of what helped the most.</p>
 
         <h2>1. Register for the exam first</h2>
         <p>The first step was <strong>booking the exam</strong>. Once there is a real date, preparation becomes serious. Without a deadline it is easy to keep studying indefinitely and never feel ready. Booking creates urgency and a concrete target.</p>
@@ -36,7 +43,7 @@
         <p>That hands-on repetition matters. CKAD is not an exam where theory alone will save you.</p>
 
         <h2>3. Use AI to generate practice questions</h2>
-        <p>One thing that genuinely helped was using GPT to create <strong>scenario-based practice tasks</strong> — not just reviewing notes. Examples:</p>
+        <p>One thing that genuinely helped was using GPT to create <strong>scenario-based practice tasks</strong>  not just reviewing notes. Examples:</p>
         <ul>
             <li>Fix this broken deployment</li>
             <li>Create a Secret and wire it into a Pod as an env variable</li>
@@ -57,7 +64,7 @@
         </ul>
         <p>Mock exams are important because CKAD is not just about knowing Kubernetes — it is about performing quickly in a live terminal environment.</p>
 
-        <h2>5. Practice Killer Shell — and understand it</h2>
+        <h2>5. Practice Killer Shell, and understand it</h2>
         <p>Practice in <strong>Killer Shell</strong>. The exam is practical and terminal speed matters. Get comfortable with:</p>
         <ul>
             <li>Creating resources quickly with imperative commands</li>
@@ -76,28 +83,8 @@
                 <div class="resource-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
                 <div class="resource-info">
                     <h5>CKAD Study Guide</h5>
-                    <p>Comprehensive coverage of Pods, Deployments, Services, Volumes, ConfigMaps, Secrets, Jobs, CronJobs, Probes, NetworkPolicy, and more — with YAML examples and exam tips throughout.</p>
+                    <p>Comprehensive coverage of Pods, Deployments, Services, Volumes, ConfigMaps, Secrets, Jobs, CronJobs, Probes, NetworkPolicy, and more , with YAML examples and exam tips throughout.</p>
                     <a href="{{ url_for('static', filename='blog/CKAD_Study_Guide.pdf') }}" target="_blank" class="resource-btn">
-                        <i class="bi bi-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-            <div class="resource-card">
-                <div class="resource-icon"><i class="bi bi-code-square"></i></div>
-                <div class="resource-info">
-                    <h5>CKAD YAML Practice Workbook</h5>
-                    <p>Hands-on YAML exercises covering every object type. The fastest way to build speed writing and editing manifests from scratch.</p>
-                    <a href="{{ url_for('static', filename='blog/CKAD_YAML_Workbook.pdf') }}" target="_blank" class="resource-btn">
-                        <i class="bi bi-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-            <div class="resource-card">
-                <div class="resource-icon"><i class="bi bi-journal-check"></i></div>
-                <div class="resource-info">
-                    <h5>KodeKloud CKAD Reference</h5>
-                    <p>The official KodeKloud CKAD reference — covers all exam domains with practical command examples and scenario walkthroughs.</p>
-                    <a href="{{ url_for('static', filename='blog/KodeKloud_CKAD.pdf') }}" target="_blank" class="resource-btn">
                         <i class="bi bi-download"></i> Download PDF
                     </a>
                 </div>
@@ -106,7 +93,7 @@
 
         <h2>7. The biggest lesson: practice to pass, not to study forever</h2>
         <blockquote>Stop trying to master every topic separately forever. Start doing mixed, timed, hands-on practice as early as possible.</blockquote>
-        <p>At some point you need to stop thinking:</p>
+        <p>At some point you needed to stop thinking:</p>
         <ul>
             <li>"Let me master Pods today"</li>
             <li>"Let me master Services tomorrow"</li>
@@ -145,7 +132,7 @@
 
         <h2>Summary</h2>
         <div class="summary-steps">
-            <div class="summary-step"><span class="step-num">1</span><span>Book the exam — commit to a date</span></div>
+            <div class="summary-step"><span class="step-num">1</span><span>Book the exam, commit to a date</span></div>
             <div class="summary-step"><span class="step-num">2</span><span>Follow one good course properly (Mumshad / KodeKloud)</span></div>
             <div class="summary-step"><span class="step-num">3</span><span>Practice hands-on every day</span></div>
             <div class="summary-step"><span class="step-num">4</span><span>Do mock exams (KodeKloud + Killer Shell)</span></div>
