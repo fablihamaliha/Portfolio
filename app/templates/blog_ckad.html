@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %}CKAD Journey | Blog{% endblock %}
+{% block content %}
+<section class="page-section">
+    <div class="page-hero">
+        <span class="eyebrow">Blog</span>
+        <h1>How I Prepared for the CKAD Exam</h1>
+        <p class="lead">What actually helped — a practical breakdown for anyone preparing for the Certified Kubernetes Application Developer exam.</p>
+    </div>
+
+    <div class="blog-meta">
+        <span><i class="bi bi-calendar3"></i> 2025</span>
+        <span><i class="bi bi-tag"></i> Kubernetes · CKAD · DevOps</span>
+        <span><i class="bi bi-clock"></i> 8 min read</span>
+    </div>
+
+    <div class="blog-body">
+
+        <p>When preparing for the <strong>CKAD (Certified Kubernetes Application Developer)</strong> exam, the challenge is not just learning concepts — it is learning how to solve tasks quickly under exam pressure. This post is a breakdown of what helped the most.</p>
+
+        <h2>1. Register for the exam first</h2>
+        <p>The first step was <strong>booking the exam</strong>. Once there is a real date, preparation becomes serious. Without a deadline it is easy to keep studying indefinitely and never feel ready. Booking creates urgency and a concrete target.</p>
+        <blockquote>If you already have some Kubernetes exposure, don't wait to "feel fully ready." Set the date and work backward.</blockquote>
+
+        <h2>2. Follow Mumshad's course properly</h2>
+        <p>The majority of prep was going through <strong>Mumshad's CKAD course on Udemy / KodeKloud</strong> — not passively watching, but typing commands, understanding the YAML, and getting comfortable with the core object types:</p>
+        <ul>
+            <li>Pods and multi-container Pods</li>
+            <li>Deployments</li>
+            <li>Services</li>
+            <li>ConfigMaps and Secrets</li>
+            <li>Jobs and CronJobs</li>
+            <li>Liveness and Readiness Probes</li>
+            <li>Security Context and Service Accounts</li>
+        </ul>
+        <p>That hands-on repetition matters. CKAD is not an exam where theory alone will save you.</p>
+
+        <h2>3. Use AI to generate practice questions</h2>
+        <p>One thing that genuinely helped was using GPT to create <strong>scenario-based practice tasks</strong> — not just reviewing notes. Examples:</p>
+        <ul>
+            <li>Fix this broken deployment</li>
+            <li>Create a Secret and wire it into a Pod as an env variable</li>
+            <li>Make this Service expose the app correctly on a NodePort</li>
+            <li>Create a CronJob that runs every 5 minutes</li>
+            <li>Add a liveness probe using httpGet on /healthz port 8080</li>
+            <li>Update RBAC for a ServiceAccount</li>
+        </ul>
+        <p>This forces you to think in the same style as the real exam — <strong>task-based, not theory-based</strong>. Your goal should be to look at a question and immediately know: what resource is this, what is the fastest path, how do I verify it worked.</p>
+
+        <h2>4. Do KodeKloud mock exams</h2>
+        <p>The <strong>KodeKloud mock exams</strong> are one of the most useful parts of prep. They build:</p>
+        <ul>
+            <li>Time management under pressure</li>
+            <li>Ability to switch between unrelated tasks</li>
+            <li>Habits around reading carefully and verifying answers</li>
+            <li>Speed with kubectl and YAML</li>
+        </ul>
+        <p>Mock exams are important because CKAD is not just about knowing Kubernetes — it is about performing quickly in a live terminal environment.</p>
+
+        <h2>5. Practice Killer Shell — and understand it</h2>
+        <p>Practice in <strong>Killer Shell</strong>. The exam is practical and terminal speed matters. Get comfortable with:</p>
+        <ul>
+            <li>Creating resources quickly with imperative commands</li>
+            <li>Using <code>kubectl explain</code> and <code>--dry-run=client -o yaml</code></li>
+            <li>Switching namespaces fast</li>
+            <li>Checking logs and describing resources</li>
+            <li>Verifying that changes actually took effect</li>
+        </ul>
+        <p>But don't just practice mechanically. Try to <strong>understand why something works</strong>. If you only memorize steps, you get stuck when the question changes slightly. If you understand the pattern, you adapt quickly.</p>
+
+        <h2>6. The CKAD study materials that helped</h2>
+        <p>Below are the core reference materials that covered everything needed for the exam. The study guide goes deep on every major topic with YAML examples, exam tips, and common gotchas.</p>
+
+        <div class="blog-resources">
+            <div class="resource-card">
+                <div class="resource-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+                <div class="resource-info">
+                    <h5>CKAD Study Guide</h5>
+                    <p>Comprehensive coverage of Pods, Deployments, Services, Volumes, ConfigMaps, Secrets, Jobs, CronJobs, Probes, NetworkPolicy, and more — with YAML examples and exam tips throughout.</p>
+                    <a href="{{ url_for('static', filename='blog/CKAD_Study_Guide.pdf') }}" target="_blank" class="resource-btn">
+                        <i class="bi bi-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon"><i class="bi bi-code-square"></i></div>
+                <div class="resource-info">
+                    <h5>CKAD YAML Practice Workbook</h5>
+                    <p>Hands-on YAML exercises covering every object type. The fastest way to build speed writing and editing manifests from scratch.</p>
+                    <a href="{{ url_for('static', filename='blog/CKAD_YAML_Workbook.pdf') }}" target="_blank" class="resource-btn">
+                        <i class="bi bi-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon"><i class="bi bi-journal-check"></i></div>
+                <div class="resource-info">
+                    <h5>KodeKloud CKAD Reference</h5>
+                    <p>The official KodeKloud CKAD reference — covers all exam domains with practical command examples and scenario walkthroughs.</p>
+                    <a href="{{ url_for('static', filename='blog/KodeKloud_CKAD.pdf') }}" target="_blank" class="resource-btn">
+                        <i class="bi bi-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h2>7. The biggest lesson: practice to pass, not to study forever</h2>
+        <blockquote>Stop trying to master every topic separately forever. Start doing mixed, timed, hands-on practice as early as possible.</blockquote>
+        <p>At some point you need to stop thinking:</p>
+        <ul>
+            <li>"Let me master Pods today"</li>
+            <li>"Let me master Services tomorrow"</li>
+            <li>"Let me master Secrets next week"</li>
+        </ul>
+        <p>Instead, start practicing the way the exam actually feels — mixed questions, short time, switching topics, solving and moving on.</p>
+
+        <p>CKAD rewards:</p>
+        <div class="takeaway-grid">
+            <div class="takeaway-item"><i class="bi bi-lightning-fill"></i><span>Speed</span></div>
+            <div class="takeaway-item"><i class="bi bi-heart-pulse-fill"></i><span>Calmness</span></div>
+            <div class="takeaway-item"><i class="bi bi-puzzle-fill"></i><span>Pattern recognition</span></div>
+            <div class="takeaway-item"><i class="bi bi-check2-circle"></i><span>Verifying answers</span></div>
+            <div class="takeaway-item"><i class="bi bi-forward-fill"></i><span>Not getting stuck</span></div>
+        </div>
+
+        <h2>Topics to be solid on</h2>
+        <div class="topic-grid">
+            <span class="skill-badge">Pods</span>
+            <span class="skill-badge">Multi-container Pods</span>
+            <span class="skill-badge">Deployments &amp; Rollouts</span>
+            <span class="skill-badge">Services &amp; Ingress</span>
+            <span class="skill-badge">ConfigMaps</span>
+            <span class="skill-badge">Secrets</span>
+            <span class="skill-badge">Liveness Probes</span>
+            <span class="skill-badge">Readiness Probes</span>
+            <span class="skill-badge">Jobs</span>
+            <span class="skill-badge">CronJobs</span>
+            <span class="skill-badge">Resource Limits</span>
+            <span class="skill-badge">ServiceAccounts</span>
+            <span class="skill-badge">RBAC Basics</span>
+            <span class="skill-badge">SecurityContext</span>
+            <span class="skill-badge">NetworkPolicy</span>
+            <span class="skill-badge">PVC / PV</span>
+        </div>
+
+        <h2>Summary</h2>
+        <div class="summary-steps">
+            <div class="summary-step"><span class="step-num">1</span><span>Book the exam — commit to a date</span></div>
+            <div class="summary-step"><span class="step-num">2</span><span>Follow one good course properly (Mumshad / KodeKloud)</span></div>
+            <div class="summary-step"><span class="step-num">3</span><span>Practice hands-on every day</span></div>
+            <div class="summary-step"><span class="step-num">4</span><span>Do mock exams (KodeKloud + Killer Shell)</span></div>
+            <div class="summary-step"><span class="step-num">5</span><span>Use AI to generate CKAD-style task practice</span></div>
+            <div class="summary-step"><span class="step-num">6</span><span>Focus on speed and verification, not perfection</span></div>
+        </div>
+
+        <p class="closing-note">CKAD is a practical execution exam. The more you practice real tasks again and again until they feel familiar, the more you stop panicking and start recognizing patterns. <strong>Practice to pass.</strong></p>
+
+    </div>
+</section>
+{% endblock %}

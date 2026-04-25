@@ -50,3 +50,7 @@ def monitoring():
     print("🔁 / monitoring route called")
 
     return render_template('monitoring.html')
+
+@main_bp.route('/blog/ckad')
+def blog_ckad():
+    return render_template('blog_ckad.html')
