@@ -54,3 +54,8 @@ def monitoring():
 @main_bp.route('/blog/ckad')
 def blog_ckad():
     return render_template('blog_ckad.html')
+
+@main_bp.route('/google558fe292da456cf5.html')
+def google_verify():
+    from flask import Response
+    return Response('google-site-verification: google558fe292da456cf5.html', mimetype='text/html')
